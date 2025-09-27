@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TRPG 音源テストページ</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    .row { margin-bottom: 20px; }
+    .name { font-weight: bold; width: 100px; display: inline-block; }
+    button { margin: 0 10px; }
+  </style>
+</head>
+<body>
+  <h1>TRPG 音源テストページ</h1>
+  <div class="row">
+    <span class="name">Aさん</span>
+    <button onclick="playSound('voice1')">音源1</button>
+    <button onclick="playSound('voice2')">音源2</button>
+  </div>
+  <div class="row">
+    <span class="name">Bさん</span>
+    <button onclick="playSound('voice3')">音源1</button>
+    <button onclick="playSound('voice4')">音源2</button>
+  </div>
+  <div class="row">
+    <span class="name">Cさん</span>
+    <button onclick="playSound('voice5')">音源1</button>
+    <button onclick="playSound('voice6')">音源2</button>
+  </div>
+  <div class="row">
+    <span class="name">Dさん</span>
+    <button onclick="playSound('voice7')">音源1</button>
+    <button onclick="playSound('voice8')">音源2</button>
+  </div>
+
+  <!-- 音源ファイル（サンプルはダミー音声。自分のMP3を用意して差し替えてもOK） -->
+  <audio id="voice1" src="voice1.mp3"></audio>
+  <audio id="voice2" src="voice2.mp3"></audio>
+  <audio id="voice3" src="voice3.mp3"></audio>
+  <audio id="voice4" src="voice4.mp3"></audio>
+  <audio id="voice5" src="voice5.mp3"></audio>
+  <audio id="voice6" src="voice6.mp3"></audio>
+  <audio id="voice7" src="voice7.mp3"></audio>
+  <audio id="voice8" src="voice8.mp3"></audio>
+
+  <script>
+    function playSound(id) {
+      let audio = document.getElementById(id);
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
+  </script>
+</body>
+</html>
